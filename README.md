@@ -2,7 +2,7 @@
 running the repo:
 ```sh
 #(only for linux)
-#make a venv and install flask
+#make a venv
 python -m venv env
 #activate the venv
 source env/bin/activate
