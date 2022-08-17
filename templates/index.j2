@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>fzrepo | {{ directory }}</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/turretcss/dist/turretcss.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="container padding-m">
+        {% if directory == "root" %}
+            <h2> Hi, and welcome to FzRepo. FzOrb's dumping ground </h2>
+            <marquee>
+            {% if rand == 0 %}
+                Information is power. But like all power, there are those who want to keep it for themselves.
+            {% endif %}
+            {% if rand == 1 %}
+                He said, "Nice doing business at the back of the Macca's"
+            {% endif %}
+            {% if rand == 2 %}
+                my movie, my movie, my superhero movie
+            {% endif %}
+            {% if rand == 3 %}
+                JEESE WHAT DID YOU DO TO THE FAMILY COMPUTER
+            {% endif %}
+            {% if rand == 4 %}
+                Alright. So that last test was... seriously disappointing. Apparently being civil isn't motivating you. So let's try things her way... fatty. Adopted fatty. Fatty fatty no-parents.
+            {% endif %}
+            </marquee>
+        {% endif %}
+        <hr>
+        {% if directory != "root" %} root > {% endif %} {{directory}}
+        {% if directory == "root" %}
+        {% set directory = "" %}
+        {% endif %}
+        <div class="table-responsive">
+            <table>
+                <tbody>
+                    {% if directory != "" %}
+                        <tr>
+                            <td><i class="fa-solid fa-angle-up"></i> <a href="/">Go back to root directory</a></td>
+                        </tr>
+                    {% endif %}
+                    {% for folder in folders %}
+                    <tr>
+                        <td><i class="fa-solid fa-folder"></i> <a href="{{directory}}/{{ folder }}">{{ folder }}</a></td>
+                    </tr>
+                    {% endfor %}
+                    {% for file in files %}
+                    <tr>
+                        <td><i class="fa-solid fa-file"></i> <a href="/static/{{ directory }}/{{ file }}">{{ file }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody> 
+            </table>
+        </div>
+        licensed under <a href="/static/license.txt">wtfpl</a><br>
+        github <a href="https://github.com/fzorb/repo">wtfpl</a>
+    </div>
+    <script>
+    var konami = [38,38,40,40,37,39,37,39,66,65];
+    var konamiIndex = 0;
+    document.addEventListener("keydown", function(e) {
+        if (e.keyCode == konami[konamiIndex++]) {
+            if (konamiIndex == konami.length) {
+                alert("Konami code.");
+                konamiIndex = 0;
+            }
+        } else {
+            konamiIndex = 0;
+        }
+    } );
+    </script>
+  </body>
+</html>
