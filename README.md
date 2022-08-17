@@ -11,3 +11,7 @@ pip install flask gunicorn
 #run the repo
 sh restart.sh
 ```
+  
+  
+## place your files in /static/
+## do not place more than one directory
