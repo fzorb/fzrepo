@@ -14,4 +14,4 @@ sh restart.sh
   
   
 ## place your files in /static/
-## do not place more than one directory
+## do not place a directory inside a directory
