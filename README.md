@@ -9,5 +9,5 @@ source env/bin/activate
 #install flask and gunicorn
 pip install flask gunicorn
 #run the repo
-gunicorn --bind 0.0.0.0:4350 wsgi:app
+sh restart.sh
 ```
